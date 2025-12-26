@@ -188,3 +188,11 @@ public class Node {
 		return head;
 	}
 }
+
+class LinkedNode extends Node {
+
+	LinkedNode(int data, Node next) {
+		super(data, next);
+	}
+
+}
