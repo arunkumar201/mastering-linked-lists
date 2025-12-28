@@ -1,3 +1,5 @@
+import java.lang.classfile.components.ClassPrinter.ListNode;
+
 public class FindMiddleNode {
 	
 
@@ -79,5 +81,33 @@ public class FindMiddleNode {
 	}
 
 	// Merge sort on linked list
+	public Node mergeTwoLists(Node list1, Node list2) {
+
+		Node dummyNode = new Node(-1, null);
+
+		Node curr = dummyNode;
+
+		Node l1 = list1;
+		Node l2 = list2;
+
+		while (l1 != null && l2 != null) {
+			if (l1.data <= l2.data) {
+				curr.next = l1;
+				l1 = l1.next;
+			} else {
+				curr.next = l2;
+				l2 = l2.next;
+			}
+			curr = curr.next;
+		}
+		// attach rest of the nodes if any list remains
+		if (l1 != null) {
+			curr.next = l1;
+		} else if (l2 != null) {
+			curr.next = l2;
+		}
+
+		return dummyNode.next;
+	}
 	
 }
