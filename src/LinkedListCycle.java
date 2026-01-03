@@ -1,4 +1,3 @@
-import java.lang.classfile.components.ClassPrinter.ListNode;
 import java.util.HashSet;
 
 public class LinkedListCycle {
