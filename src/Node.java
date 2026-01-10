@@ -59,6 +59,19 @@ public class Node {
 		System.out.println("-------");
 	}
 
+	public static Node buildLinkedList(int[] arr) {
+		if (arr.length == 0) {
+			return null;
+		}
+		Node head = new Node(arr[0], null);
+		Node temp = head;
+		for (int i = 1; i < arr.length; i++) {
+			temp.next = new Node(arr[i], null);
+			temp = temp.next;
+		}
+		return head;
+	}
+
 	/*
 	 * Prints the linked list starting from head
 	 * Time Complexity: O(n)
